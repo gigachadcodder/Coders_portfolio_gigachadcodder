@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-      primary: "#0F4C5A",
+      'NavBarBorder': "#1E2D3D",
+      'Background' : "#011627"
     },
     },
   },

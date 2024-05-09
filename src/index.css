@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Code", monospace;
+    color: #607B96;
+}
