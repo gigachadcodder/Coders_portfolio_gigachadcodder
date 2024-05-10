@@ -34,7 +34,7 @@ const navigate = useNavigate()
     <>
       <div
         className="sticky top-0 left-0 w-screen h-10 m-0 flex flex-row 
-      justify-between p-6  items-center border border-NavBarBorder
+      justify-between py-6  items-center border border-NavBarBorder
        ">
         <SingleTab action={()=>navigate('/')} title={"Abhay-Pratap-Singh"} />
         <div className="flex">
