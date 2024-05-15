@@ -11,7 +11,9 @@ import Footer from './Components/Common/Footer/Footer';
 function App() {
   return (
     <Router>
+      <div className='w-full'>
       <Header />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-me" element={<AboutMe />} />

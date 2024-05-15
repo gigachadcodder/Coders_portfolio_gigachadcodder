@@ -2,11 +2,18 @@ import { Tabs } from "antd";
 import Title from "antd/es/skeleton/Title";
 import React, { useState } from "react";
 import {useNavigate } from "react-router-dom";
+import { ImTerminal } from "react-icons/im";
+
 
 const Header = () => {
   const [tabSelected, setTabSelected] = useState(false);
   const clickHandler = () => {
     setTabIsOpen(true);
+  };
+
+  const [isNavbarOpen, setNavbarOpen ] = useState(false);
+  const navbarToggle = () => {
+    setNavbarOpen(!isNavbarOpen);
   };
 
 const navigate = useNavigate()
@@ -33,23 +40,33 @@ const navigate = useNavigate()
   return (
     <>
       <div
-        className="sticky top-0 left-0 w-screen h-10 m-0 flex flex-row 
-      justify-between py-6  items-center border border-NavBarBorder
-       ">
-        <SingleTab action={()=>navigate('/')} title={"Abhay-Pratap-Singh"} />
-        <div className="flex">
+        className="sticky w-full overflow-hidden h-[4rem] lg:[3rem] items-center flex flex-row justify-between border bg-Background
+        border-NavBarBorder top-0 left-0 ">
+        <div className="flex justify-center items-center px-3 lg:px-[1rem] font-bold text-[1.3rem] lg:text-[1rem]" onClick={()=>navigate('/')}> Abhay-Pratap-Singh</div>
+        <div className="flex flex-row ">
           {Tabs.map((items) => (
             <SingleTab key={items.name} title={items.title} action={()=>navigate(items.path)} />
           ))}
         </div>
-        <SingleTab action={()=>navigate("/contact-me")} title={"_contact-me"} />
+        <div className="hidden lg:flex lg:px-[1rem]"
+        onClick={()=>navigate('/contact-me')}>_contact-me</div>
+        <div className="lg:hidden px-[1rem] flex justify-center items-center">
+        <ImTerminal size={'20px'} onClick={navbarToggle}/>
+        </div>
       </div>
+      {isNavbarOpen && (<div className="fixed w-full h-[10rem] top-0 left-0 mt-16 bg-NavBarBorder ">
+        <div className="flex flex-col border border-NavBarBorder px-[1rem] py-[2rem] ">
+
+        </div>
+      </div>
+    )}
     </>
   );
 };
 
 const SingleTab = ({ title, action }) => (
-  <div onClick={action} className="border border-NavBarBorder p-3 hover:text-white">{title} </div>
+  <div className="hidden lg:flex md:flex border border-NavBarBorder lg:p-2.5"
+  onClick={action} >{title} </div>
 );
 
 export default Header;

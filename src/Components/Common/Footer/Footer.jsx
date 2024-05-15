@@ -16,9 +16,11 @@ const Footer = () => {
   }
 
   return (
-    <div className=' w-full h-[50px] flex flex-row sticky bottom-0 left-0 border border-NavBarBorder justify-between'>
+    <div className=' w-full h-[7%] lg:h-[7%] flex flex-row fixed bottom-0 left-0 border border-NavBarBorder justify-between'>
       <div className='flex flex-row'>
-      <SingleTab title={"find me in:"} />
+        <div className='hidden  lg:flex'>
+      <SingleTab className="hidden lg:flex" title={"find me in:"} />
+        </div>
       <SingleTab logo={<Twitter/>} />
       <SingleTab logo={<Facebook/>}/>
       </div>
