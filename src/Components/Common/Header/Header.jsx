@@ -54,7 +54,7 @@ const navigate = useNavigate()
         <ImTerminal size={'20px'} onClick={navbarToggle}/>
         </div>
       </div>
-      {isNavbarOpen && (<div className="fixed w-full h-[10rem] top-0 left-0 mt-16 bg-NavBarBorder ">
+      {isNavbarOpen && (<div className="absolute z-100 w-full h-[10rem] top-0 left-0 mt-16 bg-NavBarBorder ">
         <div className="flex flex-col border border-NavBarBorder px-[1rem] py-[2rem] ">
 
         </div>
