@@ -1,5 +1,5 @@
 import React from 'react'
-import Facebook from '../../../../assets/Logos/Facebook'
+import Facebook from '../../../assets/Logos/Facebook'
 
 const Card = ({Title, Content, Logo, background}) => {
   return (
